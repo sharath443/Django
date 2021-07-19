@@ -1,0 +1,11 @@
+.back{
+    background-image: url({% static 'images/pic.jpg' %});
+  background-repeat: no-repeat, repeat;
+}
+p{color:green;font-size: 160%;}
+h1{color:tomato;font-family: i}
+#fname{color :green; font-size:25;}
+#fpswrd{color :green; font-size:25;}
+#Male{color:purple;font-size:25;}
+#Female{color:pink;font-size:25;}
+#submit1{color:green;font-size:25;}
