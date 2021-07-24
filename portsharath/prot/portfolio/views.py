@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .form import contact_form
+from .forms import contact_form
 from .models import user_Table
 
 # Create your views here.
@@ -13,10 +13,11 @@ def work(req):
     return render(req, 'work.html')
 
 def contact(request):
-    if request.method == "Post":
-        form = contact_form(request.post)
+    if request.method == "POST":
+        form = contact_form(request.POST)
         if form.is_valid():
-            form.save()
+            data = user_Table(name=form.cleaned_data['name'],email= form.cleaned_data['email'],txt= form.cleaned_data['txt'])
+            data.save()
         return render(request, 'thankyou.html')
     else:
         form = contact_form()
